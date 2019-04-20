@@ -11,12 +11,15 @@
 总共四组设置项
 1、In-line preferences
 CheckBoxPreference
+
 2、Dialog-based preferences:
 EditTextPreference
 ListPreference
+
 3、Launch preferences
 PreferenceScreen: 跳转到另一个PreferenceScreen
 PreferenceScreen: 启动一个网页
+
 4、Preference attributes
 CheckBox: 父选项
 CheckBox: 子选项，当父选项勾选时呈现
@@ -161,6 +164,7 @@ public class PreFragment extends PreferenceFragment{
 ## 三、总结
   1、
   https://developer.android.google.cn/guide/topics/ui/settings.html
+  
   2、子屏幕形式除了<PreferenceScreen>嵌套<PreferenceScreen>方法，还有创建标头文件形式：header。
 
 
