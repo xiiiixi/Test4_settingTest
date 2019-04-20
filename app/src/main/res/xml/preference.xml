@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--此文件为设置加载的布局文件-->
+    <PreferenceCategory
+    android:title="@string/in_line">
+    <CheckBoxPreference
+        android:title="@string/checkboxPreference"
+        android:summary="@string/this_is_a_checkbox"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/dialog_based">
+        <EditTextPreference
+           android:title="@string/edit_text"
+            android:summary="@string/uses_an_edit_text_dialog"
+            android:dialogTitle="@string/enter_your_favorite_animal"/>
+        <ListPreference
+            android:title="@string/list"
+            android:summary="@string/uses_a_list_dialog"
+            android:dialogTitle="@string/choose_one"
+            android:entries="@array/option"
+            android:entryValues="@array/option"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/launch">
+        <!-- 子屏幕形式 -->
+        <PreferenceScreen
+            android:title="@string/screen_preference"
+            android:summary="@string/show_screen">
+          <CheckBoxPreference
+            android:title="@string/toggle_preference"
+            android:summary="@string/next_screen"/>
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:title="@string/intent"
+            android:summary="@string/intent_content">
+           <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://developer.android.google.cn/"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+
+    <!--设置项关联，选中父选项时，子选项才显示。使用dependency属性-->
+    <PreferenceCategory
+        android:title="@string/attributes">
+       <CheckBoxPreference
+           android:key="@string/parent_checkbox"
+           android:title="@string/parent_checkbox_preference"
+           android:summary="@string/parent_content"/>
+        <!-- 子类的可见类型是由样式属性定义的 -->
+        <CheckBoxPreference
+            android:title="@string/child_checkbox_preference"
+            android:summary="@string/child_content"
+            android:dependency="@string/parent_checkbox"/>
+    </PreferenceCategory>
+</PreferenceScreen>
