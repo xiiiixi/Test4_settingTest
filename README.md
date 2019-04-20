@@ -9,6 +9,7 @@
 ## 一、实验内容
 实现设置Activity：
 总共四组设置项
+
 1、In-line preferences
 CheckBoxPreference
 
